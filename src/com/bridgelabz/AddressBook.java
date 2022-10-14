@@ -3,12 +3,15 @@
  */
 package com.bridgelabz;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+
 
 /**
  * @author Dell
@@ -58,15 +61,14 @@ public class AddressBook {
 		}
 	}
 	
-	//Display contact details
+	//Display data of file
 	
-	public void displayAddressBook() {
-		System.out.println("Displaying all contacts from address book");
-		for(int i=0; i < contactList.size(); i++) {
-			contactList.get(i).displayContact();
-			System.out.println("---------------------");
+	public void printData() {
+		try {
+			Files.lines(new File("AddressBook-IO.txt").toPath()).forEach(System.out::println);
+		}catch(IOException e) {
+			e.printStackTrace();
 		}
 	}
-	
 	
 }

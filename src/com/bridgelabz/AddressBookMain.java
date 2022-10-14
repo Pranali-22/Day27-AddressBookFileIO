@@ -23,6 +23,6 @@ public class AddressBookMain {
 		AddressBook addressBook = new AddressBook();
 		addressBook.addToAddressBook();
 		addressBook.writeData(addressBook.contactList);
-		addressBook.displayAddressBook();
+		addressBook.printData();
 	}
 }
